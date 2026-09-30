@@ -4,5 +4,5 @@ import ie.atu.cicd1.catalogservice.model.PurchaseOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PurchaseOrderRepository
-        extends JpaRepository<PurchaseOrderRepository, Long> {
+        extends JpaRepository<PurchaseOrder, Long> {
 }
