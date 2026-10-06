@@ -1,21 +1,28 @@
 package ie.atu.cicd1.catalogservice.service;
 
 import ie.atu.cicd1.catalogservice.model.PurchaseOrder;
+import ie.atu.cicd1.catalogservice.Repository.PurchaseOrderRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import java.util.ArrayList;
+
 
 @Service
 public class PurchaseOrderService {
-    private final List<PurchaseOrder> orders = new ArrayList<>();
-    private long nextId = 1;
 
-    public List<PurchaseOrder> getALL() {
-        return orders;
+    private final PurchaseOrderRepository repository;
+
+    public PurchaseOrderService(PurchaseOrderRepository repository) {
+        this.repository = repository;
     }
+
+    public List<PurchaseOrder> getAll() {
+        return repository.findAll();
+    }
+
     public PurchaseOrder create(PurchaseOrder order) {
-        order.setId(nextId++);
-        orders.add(order);
-        return order;
+        order.setId(null);
+        return repository.save(order);
     }
 }
+

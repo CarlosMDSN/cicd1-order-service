@@ -17,7 +17,7 @@ public class PurchaseOrderController {
 
     @GetMapping
     public List<PurchaseOrder> getALL(){
-        return service.getALL();
+        return service.getAll();
     }
 
     @PostMapping
