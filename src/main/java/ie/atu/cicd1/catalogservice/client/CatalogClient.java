@@ -1,4 +1,4 @@
-package ie.atu.cicd1.catalogservice.service.client;
+package ie.atu.cicd1.catalogservice.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
