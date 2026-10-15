@@ -32,7 +32,7 @@ private final CatalogClient catalogClient;
     public String testCatalogConnection(Long productId)
     {
 
-        return catalogClient.getProductbyId(productId);
+        return catalogClient.getProductById(productId);
     }
 
 }
